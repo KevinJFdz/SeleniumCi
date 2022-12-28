@@ -1,0 +1,9 @@
+.idea/
+target/
+**/.DS_Store
+test-output/
+.env
+upload_report.py
+config.properties
+src/test/java/runners/**.java
+!src/test/java/runners/Runner.java
