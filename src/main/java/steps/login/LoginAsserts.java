@@ -1,5 +1,6 @@
 package steps.login;
 
+import io.cucumber.java.Scenario;
 import org.testng.Assert;
 import pages.inventory.InventoryPage;
 

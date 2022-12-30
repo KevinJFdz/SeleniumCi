@@ -7,3 +7,4 @@ upload_report.py
 config.properties
 src/test/java/runners/**.java
 !src/test/java/runners/Runner.java
+*.iml

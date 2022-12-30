@@ -1,8 +1,6 @@
 package pages.base;
 
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
@@ -37,5 +35,9 @@ public class BasePage {
         }catch (NoSuchElementException exception){
             return false;
         }
+    }
+
+    public static byte[] takeScreenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }
