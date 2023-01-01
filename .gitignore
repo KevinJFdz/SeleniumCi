@@ -3,6 +3,7 @@ target/
 **/.DS_Store
 test-output/
 .env
+*.iml
 upload_report.py
 config.properties
 src/test/java/runners/**.java
