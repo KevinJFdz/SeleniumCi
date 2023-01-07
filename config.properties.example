@@ -1,0 +1,21 @@
+#Zephyr
+token =
+project_name =
+
+#Selenium
+implicitlyWait=50
+fluentWait=50
+pollingEvery=100
+
+#Api
+#Auth
+authStgDomain=
+authStgClientId=
+authDevDomain=
+authDevClientId=
+#SST
+sstApiStgDomain=
+sstApiDevDomain=
+#URL
+webDomainDev=
+webDomainStg=
