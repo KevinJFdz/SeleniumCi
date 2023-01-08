@@ -27,12 +27,8 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Remove Chrome
-      run: sudo apt purge google-chrome-stable
-    - name: Remove default Chromium
-      run: sudo apt purge chromium-browser
-    - name: Install a new Chromium
-      run: sudo apt install -y chromium-browser
+    - name: Start selenoid
+      uses: Xotabu4/selenoid-github-action@v2
     - name: Build with Maven
       run: mvn clean test
 
