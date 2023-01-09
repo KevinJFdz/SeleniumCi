@@ -29,6 +29,11 @@ jobs:
         cache: maven
     - name: Start selenoid
       uses: Xotabu4/selenoid-github-action@v2
+    - name: Set environment variables
+      run: |
+        echo "::set-env name=IMPLICITLY_WAIT_TIME::${{ secrets.IMPLICITLY_WAIT_TIME }}"
+        echo "::set-env name=FLUENT_WAIT_TIME::${{ secrets.FLUENT_WAIT_TIME }}"
+        echo "::set-env name=POLLING_EVERY_TIME::${{ secrets.POLLING_EVERY_TIME }}"
     - name: Build with Maven
       run: mvn clean test
 

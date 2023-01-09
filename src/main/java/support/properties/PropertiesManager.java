@@ -15,7 +15,9 @@ public class PropertiesManager {
             InputStream input = Files.newInputStream(Paths.get("config.properties"));
             properties.load(input);
         } catch (IOException e) {
-            e.printStackTrace();
+            properties.setProperty("implicitlyWait", System.getenv("IMPLICITLY_WAIT_TIME"));
+            properties.setProperty("fluentWait", System.getenv("FLUENT_WAIT_TIME"));
+            properties.setProperty("pollingEvery", System.getenv("POLLING_EVERY_TIME"));
         }
     }
 
@@ -31,4 +33,3 @@ public class PropertiesManager {
         return Integer.parseInt(properties.getProperty("pollingEvery"));
     }
 }
-
