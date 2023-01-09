@@ -22,7 +22,8 @@ public class PropertiesManager {
     }
 
     public static int getImplicitlyWaitTime() {
-        return Integer.parseInt(properties.getProperty("implicitlyWait"));
+//        return Integer.parseInt(properties.getProperty("implicitlyWait"));
+        return 10;
     }
 
     public static int getFluentWaitTime() {
