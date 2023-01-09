@@ -3,7 +3,6 @@ package support.selenium;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -12,13 +11,9 @@ import java.net.URL;
 public class ChromeDriverManager {
     protected static WebDriver setUpDriver(boolean isHeadless){
         WebDriver driver;
-//        ChromeOptions chromeOptions = getChromeOptions(isHeadless);
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("enabledVNC", false);
-        capabilities.setCapability("enabledVideo", false);
+        ChromeOptions chromeOptions = getChromeOptions(isHeadless);
         try {
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -31,7 +26,8 @@ public class ChromeDriverManager {
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--disable-features=EnableEphemeralFlashPermission");
         chromeOptions.addArguments("--disable-infobars");
-        if (isHeadless) chromeOptions.addArguments("--headless");
+//        if (isHeadless)
+        chromeOptions.addArguments("--headless");
         return chromeOptions;
     }
 }
